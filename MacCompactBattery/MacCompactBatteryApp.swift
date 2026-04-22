@@ -24,6 +24,14 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         registerAtLoginIfNeeded()
 
         let menu = NSMenu()
+        let reorderHintItem = NSMenuItem(
+            title: "Hold Command and drag the icon to change its order",
+            action: nil,
+            keyEquivalent: ""
+        )
+        reorderHintItem.isEnabled = false
+        menu.addItem(reorderHintItem)
+        menu.addItem(.separator())
         let quitItem = NSMenuItem(title: "Quit", action: #selector(quit), keyEquivalent: "q")
         quitItem.target = self
         menu.addItem(quitItem)
