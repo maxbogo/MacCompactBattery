@@ -35,13 +35,11 @@ The menu bar item changes color to make battery state easier to read at a glance
 - macOS 13.0 or later
 - Xcode 16 or later
 
-## Build and Run
+## Build from Source
 
-1. Open `MacCompactBattery.xcodeproj` in Xcode.
-2. Select the `MacCompactBattery` scheme.
-3. Build and run the app.
-
-The app runs as a menu bar extra and does not open a standard app window.
+```sh
+xcodebuild -scheme MacCompactBattery -configuration Release build
+```
 
 ## How It Works
 
