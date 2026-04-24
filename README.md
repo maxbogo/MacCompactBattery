@@ -4,21 +4,27 @@
 
 # MacCompactBattery
 
-MacCompactBattery is a small macOS menu bar app that shows the current internal battery percentage as a compact numeric status item.
+Small macOS menu bar app that displays the current internal battery percentage as a compact numeric status item while hiding the battery icon to save space in the menu bar.
 
-## Features
-
-- Displays the current internal battery percentage in the menu bar.
-- Uses a monospaced numeric label for stable width.
-- Shows charging state in green.
-- Shows low battery state in red below 20%.
-- Registers as a login item so it starts automatically after sign-in.
-
-## Before and After
-
-The updated menu bar item keeps the same height while reducing its width, so the battery percentage takes less space in the menu bar.
+_Default macOS icon (top) vs. MacCompactBattery (bottom)_
 
 ![Before and after comparison](assets/before-after-stacked.png)
+
+
+## Install option 1: Build from Source
+
+```sh
+xcodebuild -scheme MacCompactBattery -configuration Release build
+```
+
+
+## Install option 2: Download build
+1. Download the latest .dmg from GitHub Releases, open it, and drag MacCompactBattery into Applications. 
+2. Open the app — macOS shows "MacCompactBattery" Not Opened. Click Done.
+3. Go to System Settings → Privacy & Security, find the blocked notice, and click Open Anyway.
+4. In the confirmation dialog, click Open Anyway. 
+
+MacCompactBattery is ad-hoc signed and not notarized, so macOS blocks the first launch.
 
 ## Status Examples
 
@@ -34,22 +40,6 @@ The menu bar item changes color to make battery state easier to read at a glance
 
 - macOS 13.0 or later
 - Xcode 16 or later
-
-## Build from Source
-
-```sh
-xcodebuild -scheme MacCompactBattery -configuration Release build
-```
-
-## How It Works
-
-- `BatteryMonitor.swift` reads the internal battery state through `IOKit.ps`.
-- `MacCompactBatteryApp.swift` creates the menu bar item, updates its attributed title, and registers the app as a login item.
-
-## Project Notes
-
-- The repository excludes local Xcode user state and build artifacts.
-- No personal machine paths are required for building or running the app.
 
 ## License
 
