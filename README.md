@@ -11,11 +11,20 @@ _Default macOS icon (top) vs. MacCompactBattery (bottom)_
 ![Before and after comparison](assets/before-after-stacked.png)
 
 
-## Install: Build from Source
+## Install option 1: Build from Source
 
 ```sh
 xcodebuild -scheme MacCompactBattery -configuration Release build
 ```
+
+
+## Install option 2: Download build
+1. Download the latest .dmg from GitHub Releases, open it, and drag MacCompactBattery into Applications. 
+2. Open the app — macOS shows "MacCompactBattery" Not Opened. Click Done.
+3. Go to System Settings → Privacy & Security, find the blocked notice, and click Open Anyway.
+4. In the confirmation dialog, click Open Anyway. 
+
+MacCompactBattery is ad-hoc signed and not notarized, so macOS blocks the first launch.
 
 ## Status Examples
 
