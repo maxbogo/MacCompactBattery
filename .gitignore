@@ -21,3 +21,4 @@ build/
 # Swift Package Manager
 .build/
 Package.resolved
+/scripts

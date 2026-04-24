@@ -64,7 +64,8 @@ final class BatteryMonitor: ObservableObject {
             return .systemGreen
         }
 
-        if snapshot.percentage < 20 {
+        let isLowBattery = snapshot.percentage < 20
+        if isLowBattery {
             return .systemRed
         }
 
